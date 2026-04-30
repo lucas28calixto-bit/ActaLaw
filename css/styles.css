@@ -904,7 +904,7 @@ p {
 }
 
 .sidebar-block h5 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -940,7 +940,7 @@ p {
 }
 
 .sidebar-article h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .85rem;
   font-weight: 700;
   color: var(--text);
