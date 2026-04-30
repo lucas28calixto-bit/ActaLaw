@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
 
 /* ─── Design tokens ─── */
 :root {
@@ -94,6 +94,10 @@ p {
   color: var(--text-muted);
 }
 
+#cat-desc {
+  font-family: 'Outfit', sans-serif;
+}
+
 /* ─── Layout ─── */
 .section {
   max-width: 1100px;
@@ -136,7 +140,7 @@ p {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
