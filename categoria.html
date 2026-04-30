@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias — ActaLaw</title>
+  <meta name="description" content="Navegue pelos artigos do ActaLaw por categoria.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ─── Navbar ─── -->
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo" aria-label="ActaLaw — Página inicial">
+        Acta<span>Law</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="categoria.html?cat=noticias">Notícias</a></li>
+          <li><a href="categoria.html?cat=explicacoes">Explicações</a></li>
+          <li><a href="categoria.html?cat=direito-penal">Direito Penal</a></li>
+          <li><a href="categoria.html?cat=direito-civil">Direito Civil</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <a href="index.html">Início</a>
+    <a href="categoria.html?cat=noticias">Notícias</a>
+    <a href="categoria.html?cat=explicacoes">Explicações</a>
+    <a href="categoria.html?cat=direito-penal">Direito Penal</a>
+    <a href="categoria.html?cat=direito-civil">Direito Civil</a>
+  </nav>
+
+  <main role="main">
+
+    <!-- ─── Category header ─── -->
+    <div class="cat-page-header section">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Início</a>
+        <span class="sep">›</span>
+        <span id="cat-breadcrumb">Categorias</span>
+      </nav>
+      <h1 id="cat-name" style="margin-top:.5rem"></h1>
+      <p id="cat-desc" style="margin-top:.5rem;font-size:1.05rem"></p>
+      <div class="cat-tabs" id="cat-tabs" role="tablist" aria-label="Filtrar por categoria"></div>
+    </div>
+
+    <!-- ─── Articles grid ─── -->
+    <div class="section section-block" id="cat-grid" aria-live="polite"></div>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer" role="contentinfo">
+    <div class="section">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Acta<span>Law</span></a>
+          <p>
+            Blog jurídico dedicado a tornar o direito acessível. Notícias,
+            análises e explicações com linguagem clara e rigor técnico.
+          </p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/acta.law" target="_blank" rel="noopener noreferrer"
+              class="social-link" aria-label="Instagram do ActaLaw">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Categorias</h5>
+          <ul>
+            <li><a href="categoria.html?cat=noticias">Notícias</a></li>
+            <li><a href="categoria.html?cat=explicacoes">Explicações</a></li>
+            <li><a href="categoria.html?cat=direito-penal">Direito Penal</a></li>
+            <li><a href="categoria.html?cat=direito-civil">Direito Civil</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Publicações</h5>
+          <ul>
+            <li><a href="categoria.html">Todos os artigos</a></li>
+            <li><a href="categoria.html?cat=noticias">Últimas notícias</a></li>
+            <li><a href="categoria.html?cat=explicacoes">Aprenda direito</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contato</h5>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/acta.law" target="_blank" rel="noopener noreferrer">
+                Instagram: @acta.law
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ActaLaw. Todos os direitos reservados.</p>
+        <p>
+          Siga-nos no Instagram:
+          <a href="https://www.instagram.com/acta.law" target="_blank" rel="noopener noreferrer">@acta.law</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/categoria.js"></script>
+</body>
+</html>
