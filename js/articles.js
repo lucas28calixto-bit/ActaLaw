@@ -129,7 +129,7 @@ Portanto: uma pena de 140 anos não é prisão perpétua — a Constituição n�
     date: "2026-04-25",
     readTime: 4,
     featured: true,
-    image: "https://unsplash.com/pt-br/fotografias/uma-pessoa-segurando-uma-folha-verde-na-mao-dnKXeE38sOQ",
+    image: "https://unsplash.com/pt-br/fotografias/fotografia-em-close-up-da-planta-de-cannabis-verde-PGc9Vid8O24",
     excerpt: "O Supremo Tribunal Federal concluiu o julgamento sobre a descriminalização do porte de drogas para consumo pessoal, em decisão que impacta milhares de processos em todo o país.",
     content: `
 O Supremo Tribunal Federal (STF) concluiu o histórico julgamento que discutia a constitucionalidade do artigo 28 da Lei 11.343/2006 (Lei de Drogas), que trata do porte de entorpecentes para uso pessoal. A decisão representa uma das mais relevantes do tribunal em matéria penal nas últimas décadas.
