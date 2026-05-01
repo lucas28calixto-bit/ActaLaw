@@ -45,14 +45,14 @@ export const categories = [
 export const articles = [
   {
     id: 1,
-    title: 'O que é o princípio da consunção no direito penal?',
-    category: 'explicacoes',
-    categoryLabel: 'Educacional',
-    date: '2026-04-28',
+    title: "O que é o princípio da consunção no direito penal?",
+    category: "explicacoes",
+    categoryLabel: "Educacional",
+    date: "2026-04-28",
     readTime: 5,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80',
-    excerpt: 'Quando dois crimes se relacionam de forma muito próxima, pode ser que apenas um deles seja punido. Entenda como funciona esse princípio e por que ele existe.',
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80",
+    excerpt: "Quando dois crimes se relacionam de forma muito próxima, pode ser que apenas um deles seja punido. Entenda como funciona esse princípio e por que ele existe.",
     content: `
 Imagine que alguém usa um documento falso para cometer uma fraude. Há dois crimes em jogo: a falsificação documental e o estelionato. Mas o réu será condenado pelos dois? É exatamente aí que o **princípio da consunção** entra em cena.
 
@@ -85,14 +85,14 @@ Em resumo: o princípio da consunção existe para evitar que o réu seja punido
   },
   {
     id: 2,
-    title: 'Condenado a 140 anos de prisão: isso é o mesmo que prisão perpétua?',
-    category: 'direito-penal',
-    categoryLabel: 'Direito Penal',
-    date: '2026-04-27',
+    title: "Condenado a 140 anos de prisão: isso é o mesmo que prisão perpétua?",
+    category: "direito-penal",
+    categoryLabel: "Direito Penal",
+    date: "2026-04-27",
     readTime: 7,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1453945619913-79ec89a82c51?w=900&q=80',
-    excerpt: 'Não é raro ver notícias de pessoas condenadas a 100, 200 ou até 300 anos de prisão. Na prática, esse tempo nunca será cumprido integralmente. Entenda por que e o que muda na vida do condenado.',
+    image: "https://images.unsplash.com/photo-1453945619913-79ec89a82c51?w=900&q=80",
+    excerpt: "Não é raro ver notícias de pessoas condenadas a 100, 200 ou até 300 anos de prisão. Na prática, esse tempo nunca será cumprido integralmente. Entenda por que e o que muda na vida do condenado.",
     content: `
 Nos Estados Unidos, condenações a centenas de anos de prisão são relativamente comuns. No Brasil, também aparecem casos assim — principalmente em crimes múltiplos. Mas o que significa, na prática, uma pena de 140 anos? O condenado ficará preso por todo esse tempo?
 
@@ -123,14 +123,14 @@ Portanto: uma pena de 140 anos não é prisão perpétua — a Constituição n�
   },
   {
     id: 3,
-    title: 'STF decide: porte de drogas para uso pessoal não é crime',
-    category: 'noticias',
-    categoryLabel: 'Notícias',
-    date: '2026-04-25',
+    title: "STF decide: porte de drogas para uso pessoal não é crime",
+    category: "noticias",
+    categoryLabel: "Notícias",
+    date: "2026-04-25",
     readTime: 4,
     featured: true,
-    image: 'https://images.unsplash.com/photo-1569982175971-d92b01cf8694?w=900&q=80',
-    excerpt: 'O Supremo Tribunal Federal concluiu o julgamento sobre a descriminalização do porte de drogas para consumo pessoal, em decisão que impacta milhares de processos em todo o país.',
+    image: "https://unsplash.com/pt-br/fotografias/uma-pessoa-segurando-uma-folha-verde-na-mao-dnKXeE38sOQ",
+    excerpt: "O Supremo Tribunal Federal concluiu o julgamento sobre a descriminalização do porte de drogas para consumo pessoal, em decisão que impacta milhares de processos em todo o país.",
     content: `
 O Supremo Tribunal Federal (STF) concluiu o histórico julgamento que discutia a constitucionalidade do artigo 28 da Lei 11.343/2006 (Lei de Drogas), que trata do porte de entorpecentes para uso pessoal. A decisão representa uma das mais relevantes do tribunal em matéria penal nas últimas décadas.
 
@@ -153,14 +153,14 @@ A decisão com efeito vinculante impacta todos os processos em andamento no paí
   },
   {
     id: 4,
-    title: 'O que é o habeas corpus e quando ele pode ser usado?',
-    category: 'explicacoes',
-    categoryLabel: 'Educacional',
-    date: '2026-04-22',
+    title: "O que é o habeas corpus e quando ele pode ser usado?",
+    category: "explicacoes",
+    categoryLabel: "Educacional",
+    date: "2026-04-22",
     readTime: 6,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&q=80',
-    excerpt: 'O habeas corpus é um dos remédios constitucionais mais antigos e importantes do direito brasileiro. Entenda o que ele é, quando cabe e quem pode impetrar.',
+    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&q=80",
+    excerpt: "O habeas corpus é um dos remédios constitucionais mais antigos e importantes do direito brasileiro. Entenda o que ele é, quando cabe e quem pode impetrar.",
     content: `
 O *habeas corpus* — expressão do latim que significa, literalmente, "que tenhas o teu corpo" — é uma ação constitucional destinada a proteger a liberdade de locomoção. Qualquer pessoa que esteja sofrendo ou ameaçada de sofrer coação ilegal em sua liberdade pode se valer desse instrumento.
 
@@ -191,14 +191,14 @@ O habeas corpus pode ser **liberatório**, quando busca soltar alguém já preso
   },
   {
     id: 5,
-    title: 'Reforma do Código Penal: o que muda com o novo projeto?',
-    category: 'noticias',
-    categoryLabel: 'Notícias',
-    date: '2026-04-20',
+    title: "Reforma do Código Penal: o que muda com o novo projeto?",
+    category: "noticias",
+    categoryLabel: "Notícias",
+    date: "2026-04-20",
     readTime: 5,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80',
-    excerpt: 'O projeto de reforma do Código Penal brasileiro prevê mudanças significativas na estrutura das penas, nos crimes contra a honra e na regulamentação dos crimes digitais.',
+    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80",
+    excerpt: "O projeto de reforma do Código Penal brasileiro prevê mudanças significativas na estrutura das penas, nos crimes contra a honra e na regulamentação dos crimes digitais.",
     content: `
 O Brasil discute uma ampla reforma do Código Penal — legislação que, em sua versão original, data de 1940 e já passou por inúmeras modificações pontuais ao longo das décadas. O projeto em tramitação no Congresso propõe mudanças estruturais que podem transformar significativamente o sistema penal brasileiro.
 
@@ -227,14 +227,14 @@ O projeto ainda está em tramitação e deve passar por várias modificações a
   },
   {
     id: 6,
-    title: 'Princípio da insignificância: quando o crime é pequeno demais para punir',
-    category: 'direito-penal',
-    categoryLabel: 'Direito Penal',
-    date: '2026-04-18',
+    title: "Princípio da insignificância: quando o crime é pequeno demais para punir",
+    category: "direito-penal",
+    categoryLabel: "Direito Penal",
+    date: "2026-04-18",
     readTime: 5,
     featured: false,
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80',
-    excerpt: 'Furtar um chiclete pode configurar crime de furto, mas o réu será punido? O princípio da insignificância — ou bagatela — responde a essa pergunta de forma surpreendente.',
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80",
+    excerpt: "Furtar um chiclete pode configurar crime de furto, mas o réu será punido? O princípio da insignificância — ou bagatela — responde a essa pergunta de forma surpreendente.",
     content: `
 Alguém furta um chiclete em um supermercado. Tecnicamente, praticou um crime de furto, previsto no art. 155 do Código Penal. Mas será que o Estado deve mobilizar toda a máquina do Judiciário para processar e condenar essa pessoa? É aqui que entra o **princípio da insignificância**.
 
@@ -259,5 +259,6 @@ O princípio não é ilimitado. Reincidentes habituais, réus com histórico cri
 
 A aplicação do princípio é uma das mais debatidas em toda a jurisprudência penal brasileira — e, na prática, depende muito do contexto e da análise caso a caso pelo juiz.
     `,
-  },
+  }
+
 ];
