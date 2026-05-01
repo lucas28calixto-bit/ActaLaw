@@ -268,7 +268,7 @@ A aplicação do princípio é uma das mais debatidas em toda a jurisprudência 
     date: "2026-05-01",
     readTime: 4,
     featured: true,
-    image: "https://images.unsplash.com/photo-1678440515574-0dc75039b8fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3VwcmVtZSUyMGNvdXJ0fGVufDB8fDB8fHww",
+    image: "https://images.unsplash.com/photo-1625426078245-6911839409dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJhcyVDMyVBRGxpYXxlbnwwfHwwfHx8MA%3D%3D",
     excerpt: "A quebra de um padrão que perdurou por 132 anos no Brasil. Como a rejeição de Jorge Messias reflete no cenário político e judiciário",
     content: `
 **Por que a rejeição de Jorge Messias pelo Senado é um evento histórico para o Brasil**
