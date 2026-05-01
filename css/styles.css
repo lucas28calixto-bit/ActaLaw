@@ -175,6 +175,66 @@ p {
   color: var(--text);
 }
 
+/* ─── Navbar dropdown ─── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  padding: 0;
+  font-family: inherit;
+  transition: color .15s;
+}
+
+.nav-dropdown-btn:hover,
+.nav-dropdown-btn[aria-expanded="true"] {
+  color: var(--text);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + .75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-hover);
+  list-style: none;
+  min-width: 210px;
+  padding: .5rem 0;
+  z-index: 200;
+}
+
+.dropdown-menu.open {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: .6rem 1.25rem;
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;

@@ -4,6 +4,21 @@ export function initNavbar() {
   const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  const btn = navbar.querySelector('.nav-dropdown-btn');
+  const menu = navbar.querySelector('.dropdown-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', () => {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    menu.addEventListener('click', (e) => e.stopPropagation());
+  }
 }
 
 export function initMobileMenu() {

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ActaLaw Admin</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { padding-top: 0; }
+
+    .admin-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .admin-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .admin-header h1 span { color: var(--text); }
+
+    .admin-layout {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .admin-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .admin-card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .6rem .85rem;
+      font-size: .9rem;
+      font-family: inherit;
+      color: var(--text);
+      transition: border-color .15s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      min-height: 260px;
+      resize: vertical;
+      font-family: 'Courier New', monospace;
+      font-size: .85rem;
+      line-height: 1.6;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding-top: .5rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+    }
+
+    .checkbox-group label {
+      font-size: .9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: .75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .65rem 1.25rem;
+      background: var(--surface-2);
+      color: var(--text);
+      font-size: .875rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background .15s;
+    }
+
+    .btn-secondary:hover { background: var(--border); }
+
+    .status-msg {
+      padding: .75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: .875rem;
+      font-weight: 500;
+      display: none;
+    }
+
+    .status-msg.success {
+      background: #d1fae5;
+      color: #065f46;
+      display: block;
+    }
+
+    .status-msg.error {
+      background: #fee2e2;
+      color: #991b1b;
+      display: block;
+    }
+
+    [data-theme="dark"] .status-msg.success {
+      background: #064e3b;
+      color: #6ee7b7;
+    }
+
+    [data-theme="dark"] .status-msg.error {
+      background: #7f1d1d;
+      color: #fca5a5;
+    }
+
+    .preview-body {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      min-height: 100px;
+      background: var(--bg);
+      display: none;
+    }
+
+    .preview-body.visible { display: block; }
+
+    .preview-body h2, .preview-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 1rem 0 .5rem;
+      color: var(--text);
+    }
+
+    .preview-body p { margin: .75rem 0; line-height: 1.75; }
+
+    .preview-body blockquote {
+      border-left: 3px solid var(--primary);
+      padding-left: 1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    .preview-body ul { padding-left: 1.5rem; }
+    .preview-body li { margin: .4rem 0; }
+
+    .config-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .articles-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .article-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      gap: 1rem;
+    }
+
+    .article-item-info { flex: 1; min-width: 0; }
+
+    .article-item-title {
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .article-item-meta {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-top: .2rem;
+    }
+
+    .badge-sm {
+      display: inline-block;
+      padding: .15rem .5rem;
+      font-size: .75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      background: var(--accent-light);
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    #loading-articles {
+      color: var(--text-muted);
+      font-size: .9rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid, .config-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>Acta<span>Law</span> Admin</h1>
+    <div style="display:flex;gap:.75rem;align-items:center">
+      <button class="theme-btn" id="theme-toggle" aria-label="Alternar tema">🌙</button>
+      <a href="../index.html" class="btn-secondary" style="text-decoration:none">← Ver site</a>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+
+    <!-- Configuração GitHub -->
+    <div class="admin-card" id="config-card">
+      <h2>Configuração do GitHub</h2>
+      <div class="config-grid">
+        <div class="form-group">
+          <label for="gh-token">Personal Access Token</label>
+          <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxx">
+        </div>
+        <div class="form-group">
+          <label for="gh-owner">Owner</label>
+          <input type="text" id="gh-owner" value="actalaw">
+        </div>
+        <div class="form-group">
+          <label for="gh-repo">Repositório</label>
+          <input type="text" id="gh-repo" value="ActaLaw">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-secondary" id="btn-save-config">Salvar configuração</button>
+        <span id="config-status" class="status-msg"></span>
+      </div>
+    </div>
+
+    <!-- Formulário de novo artigo -->
+    <div class="admin-card">
+      <h2>Novo artigo</h2>
+      <div class="form-grid">
+        <div class="form-group full">
+          <label for="art-title">Título</label>
+          <input type="text" id="art-title" placeholder="Título do artigo">
+        </div>
+        <div class="form-group">
+          <label for="art-category">Categoria</label>
+          <select id="art-category">
+            <option value="noticias">Notícias</option>
+            <option value="explicacoes">Educacional</option>
+            <option value="direito-penal">Direito Penal</option>
+            <option value="direito-civil">Direito Civil</option>
+            <option value="direito-administrativo">Direito Administrativo</option>
+            <option value="processo-civil">Processo Civil</option>
+            <option value="processo-penal">Processo Penal</option>
+            <option value="direito-constitucional">Direito Constitucional</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="art-readtime">Tempo de leitura (min)</label>
+          <input type="number" id="art-readtime" value="5" min="1" max="60">
+        </div>
+        <div class="form-group full">
+          <label for="art-image">URL da imagem (Unsplash)</label>
+          <input type="url" id="art-image" placeholder="https://images.unsplash.com/photo-XXXX?w=900&q=80">
+        </div>
+        <div class="form-group full">
+          <label for="art-excerpt">Resumo (1-2 frases)</label>
+          <input type="text" id="art-excerpt" placeholder="Resumo exibido nos cards">
+        </div>
+        <div class="form-group full">
+          <div class="checkbox-group">
+            <input type="checkbox" id="art-featured">
+            <label for="art-featured">Artigo em destaque na home</label>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="art-content">Conteúdo (Markdown)</label>
+          <textarea id="art-content" placeholder="## Subtítulo&#10;&#10;Texto do artigo. Use **negrito**, *itálico*.&#10;&#10;&gt; Citação ou trecho de lei.&#10;&#10;- Item de lista"></textarea>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" id="btn-publish">Publicar no ActaLaw</button>
+        <button class="btn-secondary" id="btn-preview">Pré-visualizar</button>
+        <span id="publish-status" class="status-msg"></span>
+      </div>
+      <div id="preview-container" style="margin-top:1rem">
+        <div id="preview-body" class="preview-body article-body"></div>
+      </div>
+    </div>
+
+    <!-- Artigos existentes -->
+    <div class="admin-card">
+      <h2>Artigos existentes</h2>
+      <div id="articles-list" class="articles-list">
+        <div id="loading-articles">Carregue a configuração do GitHub para listar artigos.</div>
+      </div>
+      <div class="btn-row" style="margin-top:1rem">
+        <button class="btn-secondary" id="btn-refresh">Atualizar lista</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

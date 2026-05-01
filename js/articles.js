@@ -1,8 +1,12 @@
 export const categories = [
-  { id: 'noticias',      label: 'Notícias',      icon: '📰', desc: 'Últimas notícias jurídicas do Brasil e do mundo' },
-  { id: 'explicacoes',   label: 'Explicações',   icon: '⚖️', desc: 'Conceitos e institutos do direito explicados de forma simples' },
-  { id: 'direito-penal', label: 'Direito Penal', icon: '🔒', desc: 'Crimes, penas, processo penal e jurisprudência' },
-  { id: 'direito-civil', label: 'Direito Civil', icon: '📋', desc: 'Contratos, família, propriedade e responsabilidade civil' },
+  { id: 'noticias',               label: 'Notícias',               icon: '📰', desc: 'Últimas notícias jurídicas do Brasil e do mundo' },
+  { id: 'explicacoes',            label: 'Educacional',            icon: '🎓', desc: 'Conceitos e institutos do direito explicados de forma simples' },
+  { id: 'direito-penal',          label: 'Direito Penal',          icon: '🔒', desc: 'Crimes, penas, processo penal e jurisprudência' },
+  { id: 'direito-civil',          label: 'Direito Civil',          icon: '📋', desc: 'Contratos, família, propriedade e responsabilidade civil' },
+  { id: 'direito-administrativo', label: 'Direito Administrativo', icon: '🏛️', desc: 'Administração pública, licitações, concursos e atos administrativos' },
+  { id: 'processo-civil',         label: 'Processo Civil',         icon: '⚖️', desc: 'Procedimentos, recursos e execução no processo civil' },
+  { id: 'processo-penal',         label: 'Processo Penal',         icon: '🔍', desc: 'Investigação, denúncia, instrução e julgamento criminal' },
+  { id: 'direito-constitucional', label: 'Direito Constitucional', icon: '📜', desc: 'Direitos fundamentais, controle de constitucionalidade e STF' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -43,7 +47,7 @@ export const articles = [
     id: 1,
     title: 'O que é o princípio da consunção no direito penal?',
     category: 'explicacoes',
-    categoryLabel: 'Explicações',
+    categoryLabel: 'Educacional',
     date: '2026-04-28',
     readTime: 5,
     featured: true,
@@ -151,7 +155,7 @@ A decisão com efeito vinculante impacta todos os processos em andamento no paí
     id: 4,
     title: 'O que é o habeas corpus e quando ele pode ser usado?',
     category: 'explicacoes',
-    categoryLabel: 'Explicações',
+    categoryLabel: 'Educacional',
     date: '2026-04-22',
     readTime: 6,
     featured: false,
