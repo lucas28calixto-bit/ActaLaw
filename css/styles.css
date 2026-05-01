@@ -345,7 +345,7 @@ p {
   padding: .75rem 1.5rem;
   background: var(--primary);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .9rem;
   font-weight: 600;
   border: none;
@@ -356,7 +356,7 @@ p {
 }
 
 [data-theme="dark"] .btn-primary {
-  color: #0a0f1e;
+  color: var(--bg);
 }
 
 .btn-primary:hover {
@@ -375,7 +375,7 @@ p {
   padding: .75rem 1.5rem;
   background: transparent;
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .9rem;
   font-weight: 500;
   border: 1px solid var(--border);
@@ -695,7 +695,7 @@ p {
 }
 
 .cat-card h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .9rem;
   font-weight: 600;
   color: var(--text);
@@ -768,11 +768,11 @@ p {
 }
 
 [data-theme="dark"] .social-link:hover {
-  color: #0a0f1e;
+  color: var(--bg);
 }
 
 .footer-col h5 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: .85rem;
   font-weight: 700;
   color: var(--text);
@@ -1036,7 +1036,7 @@ p {
   font-weight: 500;
   cursor: pointer;
   transition: background .2s, color .2s, border-color .2s;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .cat-tab:hover,
@@ -1048,7 +1048,7 @@ p {
 
 [data-theme="dark"] .cat-tab:hover,
 [data-theme="dark"] .cat-tab.active {
-  color: #0a0f1e;
+  color: var(--bg);
 }
 
 /* ─── Empty state ─── */
@@ -1066,13 +1066,13 @@ p {
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px) blur(8px);
+    transform: translateY(20px);
     filter: blur(6px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) blur(0);
+    transform: translateY(0);
     filter: blur(0);
   }
 }
@@ -1172,3 +1172,14 @@ p {
     text-align: center;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+#cat-name { margin-top: .5rem; }
+#cat-desc { margin-top: .5rem; font-size: 1.05rem; }

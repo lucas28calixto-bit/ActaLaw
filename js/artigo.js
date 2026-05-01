@@ -16,6 +16,11 @@ if (!article) {
     </div>`;
 } else {
   document.title = `${article.title} — ActaLaw`;
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${article.title} — ActaLaw`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', article.excerpt);
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', article.image);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
+  document.querySelector('meta[name="description"]')?.setAttribute('content', article.excerpt);
   renderArticle(article);
   renderSidebar(article);
 }
@@ -27,7 +32,7 @@ function renderArticle(a) {
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Início</a>
         <span class="sep">›</span>
-        <a href="categoria.html?cat=${a.category}">${a.categoryLabel}</a>
+        <a href="categoria?cat=${a.category}">${a.categoryLabel}</a>
         <span class="sep">›</span>
         <span>${a.title}</span>
       </nav>
@@ -44,7 +49,7 @@ function renderArticle(a) {
     <div class="section article-layout">
       <div>
         <img class="article-img" src="${a.image}" alt="${a.title}">
-        <div class="article-body">${window.marked.parse(a.content.trim())}</div>
+        <div class="article-body">${(window.marked?.parse ?? (s => `<pre>${s}</pre>`))(a.content.trim())}</div>
       </div>
       <aside class="article-sidebar" id="sidebar"></aside>
     </div>`;
@@ -54,14 +59,14 @@ function renderSidebar(current) {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  const related = articles.filter(a => a.id !== current.id && a.category === current.category).slice(0, 3);
-  const recent = articles.filter(a => a.id !== current.id).slice(0, 3);
+  const related = [...articles].sort((a,b) => new Date(b.date)-new Date(a.date)).filter(a => a.id !== current.id && a.category === current.category).slice(0, 3);
+  const recent = [...articles].sort((a,b) => new Date(b.date)-new Date(a.date)).filter(a => a.id !== current.id).slice(0, 3);
 
   const block = (title, items) => `
     <div class="sidebar-block">
       <h5>${title}</h5>
       ${items.map(a => `
-        <div class="sidebar-article" onclick="navigateTo('artigo.html',{id:${a.id}})" role="button" tabindex="0">
+        <div class="sidebar-article" onclick="navigateTo('artigo',{id:${a.id}})" role="button" tabindex="0">
           <img src="${a.image}" alt="${a.title}">
           <h6>${a.title}</h6>
         </div>`).join('')}

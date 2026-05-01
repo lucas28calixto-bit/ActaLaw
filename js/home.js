@@ -11,7 +11,7 @@ renderCategories();
 
 function cardHTML(a, imgHeight = '200px') {
   return `
-    <article class="card" onclick="navigateTo('artigo.html', {id:${a.id}})" role="button" tabindex="0"
+    <article class="card" onclick="navigateTo('artigo', {id:${a.id}})" role="button" tabindex="0"
       aria-label="${a.title}">
       <img class="card-img" src="${a.image}" alt="${a.title}" style="height:${imgHeight}" loading="lazy">
       <div class="card-body">
@@ -47,7 +47,7 @@ function renderFeatured() {
         <h3>${main.title}</h3>
         <p>${main.excerpt}</p>
       </div>`;
-    heroPreview.addEventListener('click', () => navigateTo('artigo.html', { id: main.id }));
+    heroPreview.addEventListener('click', () => navigateTo('artigo', { id: main.id }));
     heroPreview.style.cursor = 'pointer';
   }
 
@@ -61,7 +61,8 @@ function renderFeatured() {
 }
 
 function renderLatest() {
-  const latest = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6);
+  const featuredIds = new Set(articles.filter(a => a.featured).map(a => a.id));
+  const latest = [...articles].filter(a => !featuredIds.has(a.id)).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6);
   const container = document.getElementById('latest-container');
   if (!container) return;
   container.innerHTML = `<div class="latest-grid">${latest.map(a => cardHTML(a)).join('')}</div>`;
@@ -73,7 +74,7 @@ function renderCategories() {
   container.innerHTML = `
     <div class="categories-grid">
       ${categories.map(c => `
-        <div class="cat-card" onclick="navigateTo('categoria.html', {cat:'${c.id}'})" role="button" tabindex="0">
+        <div class="cat-card" onclick="navigateTo('categoria', {cat:'${c.id}'})" role="button" tabindex="0">
           <div class="cat-icon">${c.icon}</div>
           <h4>${c.label}</h4>
           <p>${c.desc}</p>
@@ -84,5 +85,5 @@ function renderCategories() {
 window.navigateTo = navigateTo;
 
 document.querySelectorAll('.card, .cat-card').forEach(el => {
-  el.addEventListener('keydown', e => { if (e.key === 'Enter') el.click(); });
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
 });

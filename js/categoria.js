@@ -31,6 +31,8 @@ function renderTabs() {
   if (breadEl) breadEl.textContent = label;
   if (descEl) descEl.textContent = meta ? meta.desc : 'Navegue por todas as nossas publicações jurídicas.';
   document.title = `${meta ? meta.label : 'Categorias'} — ActaLaw`;
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', document.title);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', window.location.href);
 }
 
 function renderGrid(cat) {
@@ -46,7 +48,7 @@ function renderGrid(cat) {
   container.innerHTML = `
     <div class="latest-grid">
       ${filtered.map(a => `
-        <article class="card" onclick="navigateTo('artigo.html',{id:${a.id}})" role="button" tabindex="0">
+        <article class="card" onclick="navigateTo('artigo',{id:${a.id}})" role="button" tabindex="0" aria-label="${a.title}">
           <img class="card-img" src="${a.image}" alt="${a.title}" loading="lazy">
           <div class="card-body">
             <span class="badge">${a.categoryLabel}</span>
