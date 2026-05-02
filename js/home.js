@@ -29,7 +29,7 @@ function cardHTML(a, imgHeight = '200px') {
 }
 
 function renderFeatured() {
-  const featured = articles.filter(a => a.featured);
+  const featured = [...articles].filter(a => a.featured).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
   if (!featured.length) return;
 
   const main = featured[0];
