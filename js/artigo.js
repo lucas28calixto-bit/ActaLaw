@@ -55,12 +55,50 @@ function renderArticle(a) {
     </div>`;
 }
 
+function tokenize(text) {
+  const stop = new Set(['que', 'para', 'com', 'por', 'uma', 'isso', 'este', 'esta',
+    'esse', 'essa', 'como', 'mais', 'tambem', 'quando', 'ser', 'ter',
+    'pode', 'nao', 'mas', 'seu', 'sua', 'ele', 'ela', 'nos', 'foi', 'sao',
+    'dos', 'das', 'aos', 'nas', 'pelo', 'pela', 'entre', 'sobre',
+    'mesmo', 'sem', 'bem', 'qual', 'quais', 'pois', 'ainda', 'cada', 'todo']);
+  return new Set(
+    text.toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9\s]/g, '')
+      .split(/\s+/)
+      .filter(w => w.length > 3 && !stop.has(w))
+  );
+}
+
+function scoreRelevance(candidate, current) {
+  let score = 0;
+  if (candidate.category === current.category) score += 4;
+  if (current.tags && candidate.tags) {
+    score += current.tags.filter(t => candidate.tags.includes(t)).length * 3;
+  }
+  const curTitle   = tokenize(current.title);
+  const curExcerpt = tokenize(current.excerpt);
+  const canTitle   = tokenize(candidate.title);
+  const canExcerpt = tokenize(candidate.excerpt);
+  curTitle.forEach(w   => { if (canTitle.has(w) || canExcerpt.has(w)) score += 2; });
+  curExcerpt.forEach(w => { if (canTitle.has(w) || canExcerpt.has(w)) score += 1; });
+  return score;
+}
+
 function renderSidebar(current) {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  const related = [...articles].sort((a,b) => new Date(b.date)-new Date(a.date)).filter(a => a.id !== current.id && a.category === current.category).slice(0, 3);
-  const recent = [...articles].sort((a,b) => new Date(b.date)-new Date(a.date)).filter(a => a.id !== current.id).slice(0, 3);
+  const candidates = articles.filter(a => a.id !== current.id);
+  const scored = candidates
+    .map(a => ({ article: a, score: scoreRelevance(a, current) }))
+    .sort((a, b) => b.score - a.score || new Date(b.article.date) - new Date(a.article.date));
+  const related = scored.slice(0, 3).map(s => s.article);
+  const relatedIds = new Set(related.map(a => a.id));
+  const recent = [...articles]
+    .filter(a => a.id !== current.id && !relatedIds.has(a.id))
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
 
   const block = (title, items) => `
     <div class="sidebar-block">

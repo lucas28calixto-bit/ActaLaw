@@ -49,11 +49,11 @@ export const articles = [
     category: "explicacoes",
     categoryLabel: "Educacional",
     date: "2026-04-28",
-    readTime: 2,
+    readTime: 5,
     featured: true,
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80",
     excerpt: "Quando dois crimes se relacionam de forma muito próxima, pode ser que apenas um deles seja punido. Entenda como funciona esse princípio e por que ele existe.",
-    tags: ["pena","principios","crime"],
+    tags: ['principio', 'crime', 'pena', 'absorcao', 'norma-penal', 'falsificacao', 'estelionato', 'tipicidade'],
     content: `
 Imagine que alguém usa um documento falso para cometer uma fraude. Há dois crimes em jogo: a falsificação documental e o estelionato. Mas o réu será condenado pelos dois? É exatamente aí que o **princípio da consunção** entra em cena.
 
@@ -90,11 +90,11 @@ Em resumo: o princípio da consunção existe para evitar que o réu seja punido
     category: "direito-penal",
     categoryLabel: "Direito Penal",
     date: "2026-04-27",
-    readTime: 2,
+    readTime: 7,
     featured: true,
     image: "https://images.unsplash.com/photo-1453945619913-79ec89a82c51?w=900&q=80",
     excerpt: "Não é raro ver notícias de pessoas condenadas a 100, 200 ou até 300 anos de prisão. Na prática, esse tempo nunca será cumprido integralmente. Entenda por que e o que muda na vida do condenado.",
-    tags: ["prisao","pena","crime"],
+    tags: ['prisao', 'pena', 'condenacao', 'regime', 'progressao', 'pacote-anticrime', 'sentenca', 'codigo-penal'],
     content: `
 Nos Estados Unidos, condenações a centenas de anos de prisão são relativamente comuns. No Brasil, também aparecem casos assim — principalmente em crimes múltiplos. Mas o que significa, na prática, uma pena de 140 anos? O condenado ficará preso por todo esse tempo?
 
@@ -129,11 +129,11 @@ Portanto: uma pena de 140 anos não é prisão perpétua — a Constituição n�
     category: "noticias",
     categoryLabel: "Notícias",
     date: "2026-04-25",
-    readTime: 1,
+    readTime: 4,
     featured: true,
-    image: "https://images.unsplash.com/photo-1519181236443-b175d4c3ca1d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://unsplash.com/pt-br/fotografias/fotografia-em-close-up-da-planta-de-cannabis-verde-PGc9Vid8O24?w=900&q=80",
     excerpt: "O Supremo Tribunal Federal concluiu o julgamento sobre a descriminalização do porte de drogas para consumo pessoal, em decisão que impacta milhares de processos em todo o país.",
-    tags: ["stf","pena","crime"],
+    tags: ['stf', 'drogas', 'descriminalizacao', 'porte', 'julgamento', 'liberdade', 'autonomia', 'crime'],
     content: `
 O Supremo Tribunal Federal (STF) concluiu o histórico julgamento que discutia a constitucionalidade do artigo 28 da Lei 11.343/2006 (Lei de Drogas), que trata do porte de entorpecentes para uso pessoal. A decisão representa uma das mais relevantes do tribunal em matéria penal nas últimas décadas.
 
@@ -164,7 +164,7 @@ A decisão com efeito vinculante impacta todos os processos em andamento no paí
     featured: false,
     image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&q=80",
     excerpt: "O habeas corpus é um dos remédios constitucionais mais antigos e importantes do direito brasileiro. Entenda o que ele é, quando cabe e quem pode impetrar.",
-    tags: [],
+    tags: ['habeas-corpus', 'liberdade', 'prisao', 'remedio-constitucional', 'constituicao', 'coacao', 'direito-fundamental'],
     content: `
 O *habeas corpus* — expressão do latim que significa, literalmente, "que tenhas o teu corpo" — é uma ação constitucional destinada a proteger a liberdade de locomoção. Qualquer pessoa que esteja sofrendo ou ameaçada de sofrer coação ilegal em sua liberdade pode se valer desse instrumento.
 
@@ -203,7 +203,7 @@ O habeas corpus pode ser **liberatório**, quando busca soltar alguém já preso
     featured: false,
     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80",
     excerpt: "O projeto de reforma do Código Penal brasileiro prevê mudanças significativas na estrutura das penas, nos crimes contra a honra e na regulamentação dos crimes digitais.",
-    tags: [],
+    tags: ['reforma', 'codigo-penal', 'crime-digital', 'pena', 'projeto-lei', 'honra', 'tipificacao'],
     content: `
 O Brasil discute uma ampla reforma do Código Penal — legislação que, em sua versão original, data de 1940 e já passou por inúmeras modificações pontuais ao longo das décadas. O projeto em tramitação no Congresso propõe mudanças estruturais que podem transformar significativamente o sistema penal brasileiro.
 
@@ -240,7 +240,7 @@ O projeto ainda está em tramitação e deve passar por várias modificações a
     featured: false,
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80",
     excerpt: "Furtar um chiclete pode configurar crime de furto, mas o réu será punido? O princípio da insignificância — ou bagatela — responde a essa pergunta de forma surpreendente.",
-    tags: [],
+    tags: ['principio', 'insignificancia', 'bagatela', 'crime', 'tipicidade', 'stf', 'furto', 'pena'],
     content: `
 Alguém furta um chiclete em um supermercado. Tecnicamente, praticou um crime de furto, previsto no art. 155 do Código Penal. Mas será que o Estado deve mobilizar toda a máquina do Judiciário para processar e condenar essa pessoa? É aqui que entra o **princípio da insignificância**.
 
@@ -264,92 +264,6 @@ O Supremo Tribunal Federal consolidou quatro vetores cumulativos para a aplicaç
 O princípio não é ilimitado. Reincidentes habituais, réus com histórico criminal relevante ou condutas que, embora de pequeno valor, revelam periculosidade social podem ter o benefício negado. Além disso, há crimes em que a insignificância é expressamente afastada, como tráfico de drogas e crimes contra a administração pública.
 
 A aplicação do princípio é uma das mais debatidas em toda a jurisprudência penal brasileira — e, na prática, depende muito do contexto e da análise caso a caso pelo juiz.
-    `,
-  },
-  {
-    id: 7,
-    title: "A rejeição de Jorge Messias ao STF: Um evento histórico para o Brasil",
-    category: "noticias",
-    categoryLabel: "Notícias",
-    date: "2026-05-01",
-    readTime: 4,
-    featured: true,
-    image: "https://images.unsplash.com/photo-1625426078245-6911839409dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnJhcyVDMyVBRGxpYXxlbnwwfHwwfHx8MA%3D%3D",
-    excerpt: "A quebra de um padrão que perdurou por 132 anos no Brasil. Como a rejeição de Jorge Messias reflete no cenário político e judiciário",
-    tags: ["stf","politica","senado"],
-    content: `
-## Por que a rejeição de Jorge Messias pelo Senado é um evento histórico para o Brasil
-
-Por mais de um século, o Senado brasileiro atuou como a instância final previsível na aprovação de indicados ao Supremo Tribunal Federal: questionava, debatia e, ao fim, chancelava as escolhas presidenciais com regularidade. 
-
-Esse padrão de deferência institucional foi repentinamente interrompido em 29 de abril de 2026, quando o Senado rejeitou a indicação de Jorge Messias, então ministro da Advocacia-Geral da União (AGU), numa decisão que reverberou em Brasília.
-
-Os números expõem o recuo do Planalto: 34 votos favoráveis e 42 contrários. 
-
-Ao não alcançar a maioria absoluta de 41 votos, rompeu-se uma sequência de 132 anos de aprovações, sinalizando uma ruptura no equilíbrio entre os Poderes. O que antes era uma formalidade procedimental tornou-se um espaço de elevado conflito institucional.
-
-
-## A quebra de uma tradição de 132 anos e o precedente de 1894
-
-Para compreender a dimensão do episódio, é fundamental retornar a 1894, durante o governo Floriano Peixoto (1891-1894), quando houve uma ruptura sistêmica entre Poder Executivo e Senado, resultando na rejeição de cinco indicados:  
-
-Cândido Barata Ribeiro, Ewerton Quadros, Galvão de Queiroz, Demóstenes Lobo e Antônio Seve Navarro.
-
-Desde a promulgação da Constituição de 1988, o Senado jamais havia exercido seu poder de veto sobre um indicado ao STF. A rejeição de Jorge Messias reflete um colapso institucional semelhante àquele enfrenta. 
-
-Como sintetizou o senador Jaques Wagner:
-
- 
->“Jorge Messias não perdeu a indicação ao Supremo. Quem perdeu foi o pacto constitucional, a Nova República. Foi o Brasil.”
-
-
-## O fator Alcolumbre: uma disputa de preferências
-
-
-A rejeição foi o desfecho de uma prolongada disputa política entre o presidente Lula e o presidente do Senado, Davi Alcolumbre. Enquanto o Planalto sustentava o nome de Messias, Alcolumbre mantinha sua preferência por Rodrigo Pacheco.
-
-O principal instrumento dessa disputa foi o atraso estratégico. Alcolumbre manteve a indicação em suspenso por cinco meses, ampliando o desgaste político, permitindo a articulação da oposição e criando condições para dissidências dentro da própria base governista.
-
-
-## leitura do placar: o fracasso da "aritmética do Planalto"
-
-
-A estratégia do governo fracassou no momento decisivo. Embora Messias tenha sido aprovado na Comissão de Constituição e Justiça (CCJ) por 16 a 11, a derrota se concretizou no voto secreto em plenário. A base governista contava com cerca de 25 votos firmes e apostava na adesão de indecisos, que acabaram se posicionando majoritariamente contra a indicação.
-O resultado de Messias representa uma queda expressiva em comparação com aprovações recentes consideradas apertadas:
-
-
-•	Luiz Fux (2011): 68 votos
-
-•	Cristiano Zanin (2023): 58 votos
-
-•	Kassio Nunes Marques (2020): 57 votos
-
-•	Flávio Dino (2023): 47 votos
-
-•	André Mendonça (2021): 47 votos
-
-**•	Jorge Messias (2026): 34 votos**
-
-
-Ficar sete votos abaixo do mínimo necessário evidencia uma insurreição legislativa que o governo não conseguiu prever, nem conter.
-
-
-## O “sujeito oculto”: Moraes e o PL da Dosimetria
-
-
-Nos bastidores, a rejeição de Messias integrou uma ofensiva legislativa mais ampla. Analistas apontam o ministro Alexandre de Moraes como o “sujeito oculto” desse movimento político.
-
-A decisão do Senado coincidiu com a derrubada do veto presidencial ao chamado "PL da Dosimetria", que reduz penas relacionadas aos eventos de 8 de janeiro. A medida representa um desafio direto à condução desses casos pelo STF. Ao rejeitar o indicado à Suprema Corte e, simultaneamente, aprovar legislação que enfraquece decisões judiciais de grande repercussão, o Senado sinaliza uma tentativa de reconfigurar o eixo de poder entre STF e Executivo.
-
-
-## Uma nova era de tensão entre Executivo e Legislativo
-
-
-As consequências são imediatas, tanto práticas quanto simbólicas. O STF passa a operar com apenas dez ministros, o que aumenta o risco de empates e contribui para o acúmulo de processos, pressionando ainda mais o sistema judiciário.
-
-Embora o presidente Lula mantenha a prerrogativa constitucional de indicar um novo nome, podendo, inclusive, reapresentar Messias, o presidente enfrenta agora um Senado mais assertivo, que abandonou o papel de instância meramente homologatória e praticamente inerte. A rejeição marca a transição de um período de predominância presidencial para outro de protagonismo legislativo.
-
-Resta saber se esse novo equilíbrio representa um fortalecimento dos freios e contrapesos ou uma escalada rumo à instabilidade institucional. O fato é que o Senado reafirmou sua autonomia e, com isso, tornou o caminho até o Supremo definitivamente mais incerto.
     `,
   }
 
