@@ -328,7 +328,7 @@ O resultado de Messias representa uma queda expressiva em comparação com aprov
 
 •	André Mendonça (2021): 47 votos
 
-**•	Jorge Messias (2026): 34 votos (rejeitado)**
+**•	Jorge Messias (2026): 34 votos**
 
 
 Ficar sete votos abaixo do mínimo necessário evidencia uma insurreição legislativa que o governo não conseguiu prever, nem conter.
